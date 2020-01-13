@@ -1,0 +1,48 @@
+<div class="container">
+	<div class="row">
+		<!-- left part -->
+		<div class="col-md-6">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h4>Ajouter une categorie</h4>
+				</div>
+				<div class="panel-body">
+					<!-- le formulaire de saisie de categorie -->
+					<div>
+						<input [(ngModel)]="categorie.name">
+						<button (click)="saveCategorie()" class="btn bg-primary spacer espace">
+							Ajouter
+						</button>
+					</div>
+				</div>
+			</div>
+		</div> 
+		<!-- right part -->
+		<div class="col-md-6">
+			<div class="panel panel-danger">
+				<div class="panel-heading">
+					<h4>Lister les categories</h4>
+				</div>
+				<div class="panel-body">
+					<div *ngIf="categories.length>0">
+                        <h3>Liste des categories</h3>
+                        <table class="table table-striped">
+                            <tr>
+                                <td>ID</td>
+                                <td>CATEGORIE</td>
+                            </tr>
+                            <tr *ngFor="let c of categories">
+                                <td>{{c.idCategorie}}</td>
+                                <td>{{c.name}}</td>
+                                <td><button class="btn btn-success btn-sm" (click)="detailCategorie(c.idCategorie)">Modifier</button></td>
+                                <br><br>
+                                <td><button class="btn btn-danger btn-sm" (click)="deleteCategorie(c.idCategorie)">Supprimer</button></td>
+                                <td></td>
+                            </tr>
+                        </table>
+					</div>
+				</div>
+			</div>
+		</div> 
+	</div>
+</div>
