@@ -1,0 +1,39 @@
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Categorie } from '../models/categorie.model';
+import { HttpClient } from '@angular/common/http';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class CategorieService {
+
+// props
+  // url - de notre projet
+  public host = 'http://localhost:8090';
+
+  // ctor
+  constructor(private httpClient: HttpClient) { }
+
+  // méthodes
+  public getAllCategories(): Observable<Categorie> {
+    return this.httpClient.get<Categorie>(this.host + '/categories/');
+  }// end getAllCategories
+
+  public getCategorie(id: number): Observable<Categorie> {
+    return this.httpClient.get<Categorie>(this.host + '/categories/' + id);
+  }// end getCategorie
+
+  public addCategorie(categorie: Categorie) {
+    return this.httpClient.post<Categorie>(this.host + '/categories/', categorie);
+  }// end addCategorie
+
+  public deleteCategorie(id: number) {
+    return this.httpClient.delete<Categorie>(this.host + '/categories/' + id);
+  }// end deleteCategorie
+
+  public updateCategorie(id: number, categorie: Categorie) {
+    return this.httpClient.put<Categorie>(this.host + '/categories/' + id, categorie);
+  }// end updateFiliere
+
+}// end class
