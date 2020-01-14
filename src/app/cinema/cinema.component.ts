@@ -16,7 +16,7 @@ id: 0,
  latitude: 0,
  altitude: 0,
  longitude: 0,
- nombrePlaces: 0
+ nombreSalles: 0
   };
 
   // liste des Cinemas
@@ -58,13 +58,8 @@ id: 0,
       .subscribe(data => this.ngOnInit());
   }
 
- modifier(id: number) {
-    this.cinemaService.retrouver(id)
-                       .subscribe( data => {
-                        this.cinema = data;
-                       });
-  }
-  detail(id: number) {
+
+detail(id: number) {
 this.cinemaService.retrouver(id)
 .subscribe(data => {
 this.cinema = data;

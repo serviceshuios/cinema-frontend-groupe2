@@ -6,6 +6,6 @@ public name: string;
 public longitude: number;
 public latitude: number;
 public altitude: number;
-public nombrePlaces: number;
+public nombreSalles: number;
 
 }
