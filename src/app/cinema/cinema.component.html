@@ -11,23 +11,23 @@
 					<div>
 						<div>
 							<label for="name">Nom : </label>
-							<input [(ngModel)]="cinema.name">
+							<input [(ngModel)]="cinema.name" class="form-control">
 						</div>
 						<div>
 							<label for="nombresalles">Nombre de salles :</label>
-							<input [(ngModel)]="cinema.nombreSalles" >
+							<input [(ngModel)]="cinema.nombreSalles" class="form-control">
 						</div>
 						<div>
 							<label for="altitude">Altitude :</label>
-							<input [(ngModel)]="cinema.altitude" >
+							<input [(ngModel)]="cinema.altitude" class="form-control">
 						</div>
 						<div>
 							<label for="latitude">Latitude :</label>
-							<input [(ngModel)]="cinema.latitude" >
+							<input [(ngModel)]="cinema.latitude" class="form-control" >
 						</div>
 						<div>
 							<label for="longitude">Longitude :</label>
-							<input [(ngModel)]="cinema.longitude" >
+							<input [(ngModel)]="cinema.longitude" class="form-control" >
 						</div>
 						
 						<button (click)="saveCinema()" class="btn bg-primary spacer espace">

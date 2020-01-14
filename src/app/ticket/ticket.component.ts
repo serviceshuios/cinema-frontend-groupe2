@@ -27,7 +27,7 @@ export class TicketComponent implements OnInit {
 
   // méthodes
   ngOnInit() {
-    this.getAllCTickets();
+    this.getAllTickets();
   }// end ngOnInit
 
   saveTicket() {
@@ -36,7 +36,7 @@ export class TicketComponent implements OnInit {
                       // on s'inscrit pr suivre ce qui se passe (comme ds body d'un controller en java)
                        .subscribe(data => {
                          this.ticket = data;
-                         this.getAllCTickets();
+                         this.getAllTickets();
                          this.ticket.nomClient = '';
                          this.ticket.prix = 0;
                          this.ticket.codePayement = 0;
@@ -44,7 +44,7 @@ export class TicketComponent implements OnInit {
                        });
   }// end saveTicket
 
-  getAllCTickets() {
+  getAllTickets() {
     this.ticketService.getAllTickets()
                        .subscribe(data => {
                          this.tickets = data;
