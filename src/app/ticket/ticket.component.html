@@ -8,12 +8,20 @@
 				<div class="panel-body">
 					<div *ngIf="tickets.length>0">
 						<h3>Liste des tickets</h3>
+						<table class="table table-striped">
+						<tr>
+                            <td>ID</td>
+							<td>NOM DU CLIENT</td>
+                            <td>CODE DE PAIEMENT</td>
+                            <td>RESERVEE</td>                          
+                        </tr>
 						<tr *ngFor="let t of tickets">
-								<td>{{t.idTicket}}</td>&nbsp;&nbsp;&nbsp;&nbsp;
-								<td>{{t.nomClient}}</td>&nbsp;&nbsp;&nbsp;&nbsp;
-								<td>{{t.codePayement}}</td>&nbsp;&nbsp;&nbsp;&nbsp;
+								<td>{{t.idTicket}}</td>
+								<td>{{t.nomClient}}</td>
+								<td>{{t.codePayement}}</td>
 								<td>{{t.reservee}}</td>
 						</tr>
+						</table>
 					</div>
 				</div>
 			</div>
