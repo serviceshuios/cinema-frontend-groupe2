@@ -5,13 +5,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 
 
+
 import { AppComponent } from './app.component';
 import { CategorieComponent } from './categorie/categorie.component';
+import { VilleComponent } from './ville/ville.component';
+import { SalleComponent } from './salle/salle.component';
+import { CinemaComponent } from './cinema/cinema.component';
+import { PlacesComponent } from './places/places.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CategorieComponent,
+    VilleComponent,
+    SalleComponent,
+    CinemaComponent,
+    PlacesComponent
 
   ],
   imports: [

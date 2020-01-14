@@ -1,0 +1,65 @@
+<div class="container">
+	<div class="row">
+		<!-- Ajout d'une ville -->
+		<div class="col-md-6">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h4>Ajouter une ville</h4>
+				</div>
+				<div class="panel-body">
+					<!-- le formulaire de saisie de ville -->
+					<div>
+						<div>
+							<label for="name">Nom :</label>
+							<input [(ngModel)]="ville.name">
+						</div>
+						<div>
+							<label for="altitude">Altitude :</label>
+							<input [(ngModel)]="ville.altitude">
+						</div>
+						<div>
+							<label for="latitude">Latitude :</label>
+							<input [(ngModel)]="ville.latitude">
+						</div>
+						<div>
+							<label for="longitude">Longitude :</label>
+							<input [(ngModel)]="ville.longitude">
+						</div>
+						
+						<button (click)="saveville()" class="btn bg-primary spacer espace">
+							Ajouter
+						</button>
+					</div>
+				</div>
+			</div>
+		</div> 
+		<!-- Liste des villes -->
+		<div class="col-md-6">
+			<div class="panel panel-danger">
+				<div class="panel-heading">
+					<h4>Liste des villes</h4>
+				</div>
+				<div class="panel-body">
+					<div *ngIf="villes.length>0">
+                       
+                        <table class="table table-striped">
+                            <tr>
+                                <td>ID</td>
+                                <td>Ville</td>
+                            </tr>
+                            <tr *ngFor="let v of villes">
+                                <td>{{v.id}}</td>
+                                <td>{{v.name}}</td>
+								<td><button class="btn btn-success btn-sm" (click)="detail(v.id)">Details</button></td>
+								<td><button class="btn btn-danger btn-sm" (click)="supprimer(v.id)">Supprimer</button></td>
+                                <br><br>
+                                <td></td>
+                            </tr>
+                        </table>
+					</div>
+				</div>
+			</div>
+		</div> 
+	</div>
+</div>
+

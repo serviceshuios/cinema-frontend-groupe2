@@ -1,0 +1,69 @@
+<div class="container">
+	<div class="row">
+		<!-- Ajout d'une place -->
+		<div class="col-md-6">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h4>Ajouter une place</h4>
+				</div>
+				<div class="panel-body">
+					<!-- le formulaire de saisie de place -->
+					<div>
+						<div>
+							<label for="id">ID :</label>
+							<input [(ngModel)]="place.idPlace">
+						</div>
+						<div>
+							<label for="numero">Numero :</label>
+							<input [(ngModel)]="place.numero">
+						</div>
+						<div>
+							<label for="altitude">Altitude :</label>
+							<input [(ngModel)]="place.altitude">
+						</div>
+						<div>
+							<label for="latitude">Latitude :</label>
+							<input [(ngModel)]="place.latitude">
+						</div>
+						<div>
+							<label for="longitude">Longitude :</label>
+							<input [(ngModel)]="place.longitude">
+						</div>
+						
+						<button (click)="saveplaces()" class="btn bg-primary spacer espace">
+							Ajouter
+						</button>
+					</div>
+				</div>
+			</div>
+		</div> 
+		<!-- Liste des places -->
+		<div class="col-md-6">
+			<div class="panel panel-danger">
+				<div class="panel-heading">
+					<h4>Liste des places</h4>
+				</div>
+				<div class="panel-body">
+					<div *ngIf="places.length>0">
+                       
+                        <table class="table table-striped">
+                            <tr>
+                                <td>ID</td>
+                                <td>Numero</td>
+                            </tr>
+                            <tr *ngFor="let p of places">
+                                <td>{{p.idPlace}}</td>
+                                <td>{{p.numero}}</td>
+								<td><button class="btn btn-success btn-sm" (click)="detail(p.idPlace)">Details</button></td>
+								<td><button class="btn btn-danger btn-sm" (click)="supprimer(p.idPlace)">Supprimer</button></td>
+                                <br><br>
+                                <td></td>
+                            </tr>
+                        </table>
+					</div>
+				</div>
+			</div>
+		</div> 
+	</div>
+</div>
+

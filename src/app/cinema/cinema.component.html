@@ -1,0 +1,73 @@
+<div class="container">
+	<div class="row">
+		<!-- Ajout d'un cinéma -->
+		<div class="col-md-6">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h4>Ajouter un cinema</h4>
+				</div>
+				<div class="panel-body">
+					<!-- le formulaire de saisie de Cinema -->
+					<div>
+						<div>
+							<label for="name">Nom : </label>
+							<input [(ngModel)]="cinema.name">
+						</div>
+						<div>
+							<label for="nombre">Nombre de places :</label>
+							<input [(ngModel)]="cinema.nombrePlaces" label="Nombre de places">
+						</div>
+						<div>
+							<label for="nombre">Altitude :</label>
+							<input [(ngModel)]="cinema.altitude" label="Altitude">
+						</div>
+						<div>
+							<label for="nombre">Latitude :</label>
+							<input [(ngModel)]="cinema.latitude" label="Latitude">
+						</div>
+						<div>
+							<label for="nombre">Longitude :</label>
+							<input [(ngModel)]="cinema.longitude" label="Longitude">
+						</div>
+						
+						<button (click)="saveCinema()" class="btn bg-primary spacer espace">
+							Ajouter
+						</button>
+					</div>
+				</div>
+			</div>
+		</div> 
+
+	
+
+
+
+		<!-- Liste des cinémas -->
+		<div class="col-md-6">
+			<div class="panel panel-danger">
+				<div class="panel-heading">
+					<h4>Liste des Cinemas</h4>
+				</div>
+				<div class="panel-body">
+					<div *ngIf="cinemas.length>0">
+                       
+                        <table class="table table-striped">
+                            <tr>
+                                <td>ID</td>
+                                <td>Cinema</td>
+                            </tr>
+                            <tr *ngFor="let c of cinemas">
+                                <td>{{c.id}}</td>
+                                <td>{{c.name}}</td>
+								<td><button class="btn btn-success btn-sm" (click)="detail(c.id)">Details</button></td>
+								<td><button class="btn btn-danger btn-sm" (click)="supprimer(c.id)">Supprimer</button></td>
+                                <br><br>
+                                <td></td>
+                            </tr>
+                        </table>
+					</div>
+				</div>
+			</div>
+		</div> 
+	</div>
+</div>

@@ -1,0 +1,59 @@
+<div class="container">
+	<div class="row">
+		<!-- Ajout d'une salle -->
+		<div class="col-md-6">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h4>Ajouter une salle</h4>
+				</div>
+				<div class="panel-body">
+					<!-- le formulaire de saisie de salle -->
+					<div>
+						<div>
+							<label for="name">Nom :</label>
+							<input [(ngModel)]="salle.name">
+						</div>
+						<div>
+							<label for="nombre">Nombre de places :</label>
+							<input [(ngModel)]="salle.nombrePlaces">
+						</div>
+						
+						
+						
+						<button (click)="saveSalle()" class="btn bg-primary spacer espace">
+							Ajouter
+						</button>
+					</div>
+				</div>
+			</div>
+		</div> 
+		<!-- Liste des salles -->
+		<div class="col-md-6">
+			<div class="panel panel-danger">
+				<div class="panel-heading">
+					<h4>Liste des salles</h4>
+				</div>
+				<div class="panel-body">
+					<div *ngIf="salles.length>0">
+                       
+                        <table class="table table-striped">
+                            <tr>
+                                <td>ID</td>
+                                <td>Salle</td>
+                            </tr>
+                            <tr *ngFor="let s of salles">
+                                <td>{{s.id}}</td>
+                                <td>{{s.name}}</td>
+								<td><button class="btn btn-success btn-sm" (click)="detail(s.id)">Details</button></td>
+								<td><button class="btn btn-danger btn-sm" (click)="supprimer(s.id)">Supprimer</button></td>
+                                <br><br>
+                                <td></td>
+                            </tr>
+                        </table>
+					</div>
+				</div>
+			</div>
+		</div> 
+	</div>
+</div>
+
