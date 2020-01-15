@@ -9,7 +9,12 @@
 				<div class="panel-body">
 					<!-- le formulaire de saisie de categorie -->
 					<div>
-						<input [(ngModel)]="categorie.name">
+						<div>
+							<label for="name">Nom : </label>
+							<input [(ngModel)]="categorie.name" class="form-control">
+						</div>
+						<!-- <input [(ngModel)]="categorie.name"> -->
+						<br>
 						<button (click)="saveCategorie()" class="btn bg-primary spacer espace">
 							Ajouter
 						</button>
@@ -25,7 +30,7 @@
 				</div>
 				<div class="panel-body">
 					<div *ngIf="categories.length>0">
-                        <h3>Liste des categories</h3>
+                        <!-- <h3>Liste des categories</h3> -->
                         <table class="table table-striped">
                             <tr>
                                 <td>ID</td>
