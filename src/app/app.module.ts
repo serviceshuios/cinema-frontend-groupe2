@@ -16,6 +16,7 @@ import { SeanceComponent } from './seance/seance.component';
 import { TicketComponent } from './ticket/ticket.component';
 import { FilmComponent } from './film/film.component';
 import { ProjectionfilmComponent } from './projectionfilm/projectionfilm.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ProjectionfilmComponent } from './projectionfilm/projectionfilm.compone
     SeanceComponent,
     TicketComponent,
     FilmComponent,
-    ProjectionfilmComponent
+    ProjectionfilmComponent,
+    HomeComponent
 
   ],
   imports: [
