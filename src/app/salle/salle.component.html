@@ -12,14 +12,24 @@
 						<div>
 							<label for="name">Nom :</label>
 							<input [(ngModel)]="salle.name" class="form-control">
-						</div>
+						</div><br/>
+
 						<div>
 							<label for="nombre">Nombre de places :</label>
 							<input [(ngModel)]="salle.nombrePlaces" class="form-control">
-						</div>
+						</div><br/>
 						
-						
-						
+						<!--<label for="nombre">Cinema :</label>
+						<select class="form-control" [(ngModel)]= "salle.cinema">
+							<option *ngFor="let c of cinemas [ngValue] = salle.cinema">
+							 {{c.id}} {{c.name}}
+							</option>
+						</select>-->
+						L'implementation de la selection du cinema ne marche pas
+						<div>							
+						</div><br/>
+
+
 						<button (click)="saveSalle()" class="btn bg-primary spacer espace">
 							Ajouter
 						</button>
@@ -39,11 +49,15 @@
                         <table class="table table-striped">
                             <tr>
                                 <td>ID</td>
-                                <td>Salle</td>
+								<td>Salle</td>
+								<td>Nombre de places</td>
+								<td>Film</td>
                             </tr>
                             <tr *ngFor="let s of salles">
                                 <td>{{s.id}}</td>
-                                <td>{{s.name}}</td>
+								<td>{{s.name}}</td>
+								<td>{{s.nombrePlaces}}</td>
+								<td>{{s.film.titre}}</td>
 								<td><button class="btn btn-success btn-sm" (click)="detail(s.id)">Details</button></td>
 								<td><button class="btn btn-danger btn-sm" (click)="supprimer(s.id)">Supprimer</button></td>
                                 <br><br>
