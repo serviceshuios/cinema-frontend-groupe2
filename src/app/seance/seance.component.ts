@@ -34,7 +34,7 @@ export class SeanceComponent implements OnInit {
                        .subscribe(data => {
                          this.seance = data;
                          this.getAllSeances();
-                         this.seance.heureDebut = null;
+                         this.seance.heureDebut = new Date();
                        });
   }// end saveSeance
 
