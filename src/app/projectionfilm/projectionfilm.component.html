@@ -10,9 +10,10 @@
 					<!-- le formulaire de saisie de la projection -->
 					<div>
 						<div>
-							<label for="dateProjection">heure de projection :</label>
-							<input [(ngModel)]="projectionfilm.dateProjection" class="form-control">
+							<label for="dateProjection">date de projection :</label>
+							<input type="date" [(ngModel)]="projectionfilm.dateProjection" class="form-control">
 						</div>
+
 						<div>
 							<label for="prix">prix de la projection :</label>
 							<input [(ngModel)]="projectionfilm.prix" class="form-control">
@@ -47,8 +48,9 @@
                                 <td>{{p.idProjectionfilm}}</td>
 								<td>{{p.dateProjection}}</td>
 								<td>{{p.prix}}</td>
-								<td><button class="btn btn-success btn-sm" (click)="detail(p.id)">Details</button></td>
-								<td><button class="btn btn-danger btn-sm" (click)="supprimer(p.id)">Supprimer</button></td>
+								<td>{{p.film.idFilm}}</td>
+								<td>{{p.salle.id}}</td>
+								<td>{{p.seance.idSeance}}</td>
                                 <br><br>
                                 <td></td>
                             </tr>
