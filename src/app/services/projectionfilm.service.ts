@@ -14,23 +14,23 @@ export class ProjectionfilmService {
 
 
 public retrouverTout(): Observable<Projectionfilm> {
-return this.httpClient.get<Projectionfilm>(this.host + '/projectionfilms');
+return this.httpClient.get<Projectionfilm>(this.host + '/projectionFilms');
 }
 
 public retrouver(id: number): Observable<Projectionfilm> {
-return this.httpClient.get<Projectionfilm>(this.host + '/projectionfilms/' + id);
+return this.httpClient.get<Projectionfilm>(this.host + '/projectionFilms/' + id);
 }
 
 public ajouter(projectionfilm: Projectionfilm) {
-return this.httpClient.post<Projectionfilm>(this.host + '/projectionfilms/', projectionfilm);
+return this.httpClient.post<Projectionfilm>(this.host + '/projectionFilms/', projectionfilm);
 }
 
 public supprimer(id: number) {
-return this.httpClient.delete<Projectionfilm>(this.host + '/projectionfilms/' + id);
+return this.httpClient.delete<Projectionfilm>(this.host + '/projectionFilms/' + id);
 }
 
 public modifier(id: number, projectionfilm: Projectionfilm) {
-return this.httpClient.put<Projectionfilm>(this.host + '/projectionfilms/' + id, projectionfilm);
+return this.httpClient.put<Projectionfilm>(this.host + '/projectionFilms/' + id, projectionfilm);
 }
 
 
