@@ -9,6 +9,7 @@ import { SeanceComponent } from './seance/seance.component';
 import { FilmComponent } from './film/film.component';
 import { TicketComponent } from './ticket/ticket.component';
 import { ProjectionfilmComponent } from './projectionfilm/projectionfilm.component';
+import { HomeComponent } from './home/home.component';
 
 
 // definir les routes de mon projet
@@ -23,12 +24,13 @@ const routes: Routes = [
   { path : 'film', component: FilmComponent},
   { path : 'projectionFilm', component: ProjectionfilmComponent},
   { path : 'ticket', component: TicketComponent},
+  { path : 'home', component: HomeComponent},
 
   {
     // si rien, alors avoir par defaut
     path: '',
     // redirection vers path existant
-    redirectTo: '',
+    redirectTo: '/home',
     pathMatch: 'full'
   }
 ];
