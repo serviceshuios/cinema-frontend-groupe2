@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import 'underscore';
 import { VilleService } from './services/ville.service';
 import { Ville } from './models/ville.model';
 
