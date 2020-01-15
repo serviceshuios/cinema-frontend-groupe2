@@ -10,12 +10,12 @@
 					<!-- le formulaire de saisie de la projection -->
 					<div>
 						<div>
-							<label for="dateProjection">date de projection :</label>
+							<label for="dateProjection">Date de projection :</label>
 							<input type="date" [(ngModel)]="projectionfilm.dateProjection" class="form-control">
 						</div>
 
 						<div>
-							<label for="prix">prix de la projection :</label>
+							<label for="prix">Prix de la projection :</label>
 							<input [(ngModel)]="projectionfilm.prix" class="form-control">
 						</div>
 
@@ -41,18 +41,18 @@
                         <table class="table table-striped">
                             <tr>
                                 <td>ID</td>
-								<td>HEURE</td>
-								<td>PRIX</td>
+								<td>Date</td>
+								<td>Prix</td>
                             </tr>
                             <tr *ngFor="let p of projectionfilms">
                                 <td>{{p.idProjectionfilm}}</td>
-								<td>{{p.dateProjection}}</td>
+								<td>{{p.dateProjection | date : 'dd/MM/yyyy'}}</td>
 								<td>{{p.prix}}</td>
-								<td>{{p.film.idFilm}}</td>
-								<td>{{p.salle.id}}</td>
-								<td>{{p.seance.idSeance}}</td>
                                 <br><br>
-                                <td></td>
+								<td></td>
+								<td><button class="btn btn-success btn-sm" (click)="detail(p.idProjectionfilm)">Modifier</button></td>
+								<br><br>
+								<td><button class="btn btn-danger btn-sm" (click)="supprimer(p.idProjectionfilm)">Supprimer</button></td>
                             </tr>
                         </table>
 					</div>

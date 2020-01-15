@@ -9,14 +9,14 @@ import { ProjectionfilmService } from '../services/projectionfilm.service';
 })
 export class ProjectionfilmComponent implements OnInit {
 
-    projectionfilm: Projectionfilm = {
+  projectionfilm: Projectionfilm = {
 
     idProjectionFilm: 0,
     dateProjection: null,
     prix: 0
 
   };
-   // liste des projectionfilms
+  // liste des projectionfilms
   projectionfilms;
 
   constructor(private projectionfilmService: ProjectionfilmService) { }
@@ -54,17 +54,17 @@ export class ProjectionfilmComponent implements OnInit {
       .subscribe(data => this.ngOnInit());
   }
 
- modifier(id: number) {
+  modifier(id: number) {
     this.projectionfilmService.retrouver(id)
-                       .subscribe( data => {
-                        this.projectionfilm = data;
-                       });
+      .subscribe(data => {
+        this.projectionfilm = data;
+      });
   }
   detail(id: number) {
-this.projectionfilmService.retrouver(id)
-.subscribe(data => {
-this.projectionfilm = data;
-});
-}
+    this.projectionfilmService.retrouver(id)
+      .subscribe(data => {
+        this.projectionfilm = data;
+      });
+  }
 
 }
