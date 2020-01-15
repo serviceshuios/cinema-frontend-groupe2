@@ -1,0 +1,61 @@
+<div class="container">
+	<div class="row">
+		<!-- Ajout d'une projection -->
+		<div class="col-md-6">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h4>Ajouter une projection</h4>
+				</div>
+				<div class="panel-body">
+					<!-- le formulaire de saisie de la projection -->
+					<div>
+						<div>
+							<label for="dateProjection">heure de projection :</label>
+							<input [(ngModel)]="projectionfilm.dateProjection" class="form-control">
+						</div>
+						<div>
+							<label for="prix">prix de la projection :</label>
+							<input [(ngModel)]="projectionfilm.prix" class="form-control">
+						</div>
+
+						<button (click)="saveProjectionfilm()" class="btn bg-primary spacer espace">
+							Ajouter
+						</button>
+
+					</div>
+				</div>
+			</div>
+		</div> 
+
+
+		<!-- Liste des projections -->
+		<div class="col-md-6">
+			<div class="panel panel-danger">
+				<div class="panel-heading">
+					<h4>Liste des projections</h4>
+				</div>
+				<div class="panel-body">
+					<div *ngIf="projectionfilms.length>0">
+                       
+                        <table class="table table-striped">
+                            <tr>
+                                <td>ID</td>
+								<td>HEURE</td>
+								<td>PRIX</td>
+                            </tr>
+                            <tr *ngFor="let p of projectionfilms">
+                                <td>{{p.idProjectionfilm}}</td>
+								<td>{{p.dateProjection}}</td>
+								<td>{{p.prix}}</td>
+								<td><button class="btn btn-success btn-sm" (click)="detail(p.id)">Details</button></td>
+								<td><button class="btn btn-danger btn-sm" (click)="supprimer(p.id)">Supprimer</button></td>
+                                <br><br>
+                                <td></td>
+                            </tr>
+                        </table>
+					</div>
+				</div>
+			</div>
+		</div> 
+	</div>
+</div>
