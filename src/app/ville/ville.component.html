@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="row">
 		<!-- Ajout d'une ville -->
-		<div class="col-md-6">
+		<div class="col-md-4">
 			<div class="panel panel-primary">
 				<div class="panel-heading">
 					<h4>Ajouter une ville</h4>
@@ -25,7 +25,7 @@
 							<label for="longitude">Longitude :</label>
 							<input [(ngModel)]="ville.longitude" class="form-control">
 						</div>
-						
+						<br>
 						<button (click)="saveville()" class="btn bg-primary spacer espace">
 							Ajouter
 						</button>
@@ -34,7 +34,7 @@
 			</div>
 		</div> 
 		<!-- Liste des villes -->
-		<div class="col-md-6">
+		<div class="col-md-8">
 			<div class="panel panel-danger">
 				<div class="panel-heading">
 					<h4>Liste des villes</h4>
@@ -45,11 +45,17 @@
                         <table class="table table-striped">
                             <tr>
                                 <td>ID</td>
-                                <td>Ville</td>
+								<td>Nom</td>
+								<td>Altitude</td>
+								<td>Latitude</td>
+								<td>Longitude</td>
                             </tr>
                             <tr *ngFor="let v of villes">
                                 <td>{{v.id}}</td>
-                                <td>{{v.name}}</td>
+								<td>{{v.name}}</td>
+								<td>{{v.altitude}}</td>
+								<td>{{v.latitude}}</td>
+								<td>{{v.longitude}}</td>
 								<td><button class="btn btn-success btn-sm" (click)="detail(v.id)">Details</button></td>
 								<td><button class="btn btn-danger btn-sm" (click)="supprimer(v.id)">Supprimer</button></td>
                                 <br><br>
@@ -62,4 +68,3 @@
 		</div> 
 	</div>
 </div>
-
