@@ -9,7 +9,7 @@ import { SeanceService } from '../services/seance.service';
 })
 export class SeanceComponent implements OnInit {
 
-  // props HAHA
+  // props HAHA HOHO
 
   // recupere la seance saisie
   seance: Seance = {
