@@ -32,7 +32,7 @@
             </div>
             	<div>
 							<label for="dateSortie">Date de sortie :</label>
-							<input [(ngModel)]="film.dateSortie" class="form-control">
+							<input type="date" [(ngModel)]="film.dateSortie" class="form-control">
 						</div>
 						
 						<button (click)="savefilm()" class="btn bg-primary spacer espace">
@@ -54,14 +54,23 @@
                         <table class="table table-striped">
                             <tr>
                                 <td>ID</td>
-                                <td>Titre</td>
+								<td>Titre</td>
+								<td>Date de sortie</td>
+								<td>Duree</td>
+								<td>Realisateur</td>
+								<td>Photo</td>
                             </tr>
                             <tr *ngFor="let f of films">
                                 <td>{{f.idFilm}}</td>
-                                <td>{{f.titre}}</td>
-								<td><button class="btn btn-success btn-sm" (click)="detail(f.idFilmm)">Details</button></td>
+								<td>{{f.titre}}</td>
+								<td>{{f.dateSortie| date:"dd/MM/yyyy"}}</td>
+								<td>{{f.duree}}</td>
+								<td>{{f.realisateur}}</td>
+								<td>{{f.photo}}</td>
+								<td><button class="btn btn-success btn-sm" (click)="detail(f.idFilm)">Modifier</button></td>
+								<br><br>
 								<td><button class="btn btn-danger btn-sm" (click)="supprimer(f.idFilm)">Supprimer</button></td>
-                                <br><br>
+                               
                                 <td></td>
                             </tr>
                         </table>

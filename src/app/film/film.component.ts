@@ -38,12 +38,11 @@ idFilm: 0,
         this.film = data
         this.retrouverTout();
         this.film.photo = "";
-        this.film.idFilm = 0;
         this.film.duree = 0;
         this.film.description = "";
-        this.film.dateSortie = null;
-        this.film.realisateur= '';
-        this.film.titre= '';
+        this.film.dateSortie = new Date();
+        this.film.realisateur = '';
+        this.film.titre = '';
 
       });
   }
@@ -73,7 +72,7 @@ idFilm: 0,
                         this.film = data;
                        });
   }
-  detail(id: number) {
+detail(id: number) {
 this.filmService.recuperer(id)
 .subscribe(data => {
 this.film = data;
