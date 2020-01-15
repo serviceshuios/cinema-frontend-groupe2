@@ -5,6 +5,10 @@ import { CinemaComponent } from './cinema/cinema.component';
 import { VilleComponent } from './ville/ville.component';
 import { SalleComponent } from './salle/salle.component';
 import { PlacesComponent } from './places/places.component';
+import { SeanceComponent } from './seance/seance.component';
+import { FilmComponent } from './film/film.component';
+import { TicketComponent } from './ticket/ticket.component';
+import { ProjectionfilmComponent } from './projectionfilm/projectionfilm.component';
 
 
 // definir les routes de mon projet
@@ -15,6 +19,10 @@ const routes: Routes = [
   { path: 'ville', component: VilleComponent},
   { path: 'salle', component: SalleComponent},
   { path: 'place', component: PlacesComponent},
+  { path : 'seance', component: SeanceComponent},
+  { path : 'film', component: FilmComponent},
+  { path : 'projectionFilm', component: ProjectionfilmComponent},
+  { path : 'ticket', component: TicketComponent},
 
   {
     // si rien, alors avoir par defaut

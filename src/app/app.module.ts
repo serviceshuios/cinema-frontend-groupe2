@@ -12,6 +12,9 @@ import { VilleComponent } from './ville/ville.component';
 import { SalleComponent } from './salle/salle.component';
 import { CinemaComponent } from './cinema/cinema.component';
 import { PlacesComponent } from './places/places.component';
+import { SeanceComponent } from './seance/seance.component';
+import { TicketComponent } from './ticket/ticket.component';
+import { FilmComponent } from './film/film.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { PlacesComponent } from './places/places.component';
     VilleComponent,
     SalleComponent,
     CinemaComponent,
-    PlacesComponent
+    PlacesComponent,
+    SeanceComponent,
+    TicketComponent,
+    FilmComponent
 
   ],
   imports: [
