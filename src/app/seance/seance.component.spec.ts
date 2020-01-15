@@ -21,5 +21,5 @@ describe('SeanceComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
-  });
+   });
 });

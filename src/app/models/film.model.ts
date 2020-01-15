@@ -1,3 +1,5 @@
+import { Categorie } from './categorie.model';
+
 export class Film {
      idFilm: number;
 	 titre: string;
@@ -6,6 +8,7 @@ export class Film {
 	description: string;
 	photo: string;
 	dateSortie: Date;
+	categorie: Categorie;
 	
 	
 }
