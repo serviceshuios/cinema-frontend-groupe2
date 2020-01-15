@@ -8,13 +8,13 @@ import { VilleService } from '../services/ville.service';
   styleUrls: ['./ville.component.css']
 })
 export class VilleComponent implements OnInit {
-   ville: Ville = {
+  ville: Ville = {
 
-id: 0,
- name: '',
- latitude: 0,
- altitude: 0,
- longitude: 0,
+    id: 0,
+    name: '',
+    latitude: 0,
+    altitude: 0,
+    longitude: 0,
 
   };
   // liste des villes
@@ -31,7 +31,7 @@ id: 0,
   saveville() {
     this.villeService.ajouter(this.ville)
       .subscribe(data => {
-        this.ville = data
+        this.ville = data;
         this.retrouverTout();
         this.ville.altitude = 0;
         this.ville.latitude = 0;
@@ -45,15 +45,15 @@ id: 0,
   retrouverTout() {
     this.villeService.recupererTout()
       .subscribe(data => {
-        this.villes = data
-      })
+        this.villes = data;
+      });
   }
 
   retrouver(id: number) {
     this.villeService.recuperer(id)
       .subscribe(data => {
         this.ville = data;
-      })
+      });
   }
 
   supprimer(id: number) {
@@ -61,17 +61,17 @@ id: 0,
       .subscribe(data => this.ngOnInit());
   }
 
- modifier(id: number) {
+  modifier(id: number) {
     this.villeService.recuperer(id)
-                       .subscribe( data => {
-                        this.ville = data;
-                       });
+      .subscribe(data => {
+        this.ville = data;
+      });
   }
   detail(id: number) {
-this.villeService.recuperer(id)
-.subscribe(data => {
-this.ville = data;
-})
-}
+    this.villeService.recuperer(id)
+      .subscribe(data => {
+        this.ville = data;
+      });
+  }
 
 }
