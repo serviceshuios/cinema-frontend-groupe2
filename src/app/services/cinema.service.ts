@@ -14,7 +14,7 @@ export class CinemaService {
 
   
 public retrouverTout(): Observable<Cinema> {
-return this.httpClient.get<Cinema>(this.host + '/cinemas')
+return this.httpClient.get<Cinema>(this.host + '/cinemas/')
 }
 
 public retrouver(id: number): Observable<Cinema> {
