@@ -35,11 +35,11 @@ idFilm: 0,
   savefilm() {
     this.filmService.ajouter(this.film)
       .subscribe(data => {
-        this.film = data
+        this.film = data;
         this.retrouverTout();
-        this.film.photo = "";
+        this.film.photo = '' ;
         this.film.duree = 0;
-        this.film.description = "";
+        this.film.description = '' ;
         this.film.dateSortie = new Date();
         this.film.realisateur = '';
         this.film.titre = '';
@@ -50,15 +50,15 @@ idFilm: 0,
   retrouverTout() {
     this.filmService.recupererTout()
       .subscribe(data => {
-        this.films = data
-      })
+        this.films = data;
+      });
   }
 
   retrouver(id: number) {
     this.filmService.recuperer(id)
       .subscribe(data => {
         this.film = data;
-      })
+      });
   }
 
   supprimer(id: number) {
@@ -76,7 +76,7 @@ detail(id: number) {
 this.filmService.recuperer(id)
 .subscribe(data => {
 this.film = data;
-})
+});
 }
 
 }
