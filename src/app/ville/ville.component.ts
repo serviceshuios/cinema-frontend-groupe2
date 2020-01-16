@@ -33,6 +33,7 @@ export class VilleComponent implements OnInit {
       .subscribe(data => {
         this.ville = data;
         this.retrouverTout();
+        this.ville.id = 0;
         this.ville.altitude = 0;
         this.ville.latitude = 0;
         this.ville.id = 0;
