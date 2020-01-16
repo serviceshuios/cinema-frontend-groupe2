@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Cinema } from '../models/Cinema.model';
 import { CinemaService } from '../services/Cinema.service';
-import { Ville } from '../models/Ville.model';
 import { VilleService } from '../services/Ville.service';
+import { Ville } from '../models/ville.model';
 
 @Component({
   selector: 'app-cinema',
@@ -12,7 +12,7 @@ import { VilleService } from '../services/Ville.service';
 export class CinemaComponent implements OnInit {
 
   cinema: Cinema = {
- 
+
     id: 0,
     name: '',
     longitude: 0,

@@ -10,6 +10,7 @@ import { FilmComponent } from './film/film.component';
 import { TicketComponent } from './ticket/ticket.component';
 import { ProjectionfilmComponent } from './projectionfilm/projectionfilm.component';
 import { HomeComponent } from './home/home.component';
+import { ClientComponent } from './client/client.component';
 
 
 // definir les routes de mon projet
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path : 'projectionFilm', component: ProjectionfilmComponent},
   { path : 'ticket', component: TicketComponent},
   { path : 'home', component: HomeComponent},
+  { path : 'client', component: ClientComponent},
 
   {
     // si rien, alors avoir par defaut

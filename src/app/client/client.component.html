@@ -7,9 +7,41 @@
 					<h4>Reservation d'une place de cinema</h4>
 				</div>
 				<div class="panel-body">
-					Detailler
+					<table class="table table-striped">
+						<tr>
+							<td><label for="select-ville">Ville :</label></td>
+							<td>-</td>
+							<td>-</td>
+							<td><label for="select-cinema">Cinema :</label></td>
+						</tr>
+						<tr>
+							<td>
+								<select class="form-control" id="select-ville" [(ngModel)]="cinema.ville">
+									<option *ngFor="let v of villes" [ngValue]="v">
+										{{v.name}}
+									</option>
+								</select><br>
+								<button (click)="retrouverToutCinema(cinema.ville)"
+									class="btn bg-primary spacer espace">
+									Ajouter
+								</button>
+							</td>
+							<td>-</td>
+							<td>-</td>
+							<td>
+								<select class="form-control" id="select-cinema" [(ngModel)]="salle.cinema">
+									<option *ngFor="let c of cinemas" [ngValue]="c">
+										{{c.name}}
+									</option>
+								</select>
+								<button class="btn bg-primary spacer espace">
+									Ajouter
+								</button>
+							</td>
+						</tr>
+					</table>
 				</div>
 			</div>
-		</div> 
+		</div>
 	</div>
 </div>

@@ -8,11 +8,15 @@
 </head>
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
-			<a class="navbar-brand">PROJET CINEMA GROUPE 2</a>
+			<a class="navbar-brand">CINEMA CITY &nbsp;&nbsp;&nbsp; &#10160; &nbsp;&nbsp;&nbsp;</a>
 			<ul class="nav navbar-nav">
 				<table class="table table-striped">
 					<tr>
+<<<<<<< HEAD
 						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+=======
+						<!--<td>==============================</td>-->
+>>>>>>> branch 'master' of https://github.com/serviceshuios/cinema-frontend-groupe2.git
 						<td>
 							<div class="drawer">
 								<input type="checkbox">
@@ -33,7 +37,7 @@
 								</ul>
 							</div>
 						</td>
-						<td>==========</td>
+						<!--<td>==========</td>-->
 						<td>
 							<div class="drawer">
 								<input type="checkbox">
@@ -41,18 +45,20 @@
 									<span><strong>Client</strong></span>
 									<span class="drawer__arrow">[]</span>
 								</span>
-								<ul class="drawer__content" *ngFor="let v of villes">
-									<li>{{v.name}}</li>
+								<ul class="drawer__content">
+									<li><a [routerLink]="['client']">Reservation</a></li>
 								</ul>
 							</div>
 						</td>
-						<td>==============================</td>
-						<td><a href="/home">Home</a></td>
+						<!--<td>==============================</td>-->
+						<td><a id="home" href="/home"><span style="color:black"><b>Home</b></span></a></td>
 					</tr>
 				</table>
 			</ul>
 		</div>
 	</nav>
+
+	<!-- {{CheminComplet}} -->
 
 	<div class="container">
 		<router-outlet></router-outlet>

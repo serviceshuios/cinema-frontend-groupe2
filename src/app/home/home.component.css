@@ -4,6 +4,16 @@
 
 div{
     text-align: center;
+    
+}
+.small{
+  background-color: black;
+}
+h1{
+  color: honeydew;
+}
+h4{
+  color: honeydew;
 }
 /*==================== 
 	Footer 
