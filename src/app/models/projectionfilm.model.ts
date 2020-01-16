@@ -10,6 +10,6 @@ export class Projectionfilm {
     public prix: number;
     film: Film;
     salle: Salle;
-    seance: Seance;
+    seance: Seance; 
 
 }// end classe
