@@ -23,7 +23,7 @@ export class ProjectionfilmComponent implements OnInit {
 
   };
   // liste des projectionfilms
-  projectionfilms;
+  projectionfilms; 
 
   // Liste des salles
   salles;

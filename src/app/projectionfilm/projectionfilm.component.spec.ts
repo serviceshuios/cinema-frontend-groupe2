@@ -9,7 +9,7 @@ describe('ProjectionfilmComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ ProjectionfilmComponent ]
-    })
+    }) 
     .compileComponents();
   }));
 
