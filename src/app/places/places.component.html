@@ -13,19 +13,26 @@
 						<div>
 							<label for="numero">Numero :</label>
 							<input [(ngModel)]="place.numero" class="form-control">
-						</div>
+						</div><br/>
 						<div>
 							<label for="altitude">Altitude :</label>
 							<input [(ngModel)]="place.altitude" class="form-control">
-						</div>
+						</div><br/>
 						<div>
 							<label for="latitude">Latitude :</label>
 							<input [(ngModel)]="place.latitude" class="form-control">
-						</div>
+						</div><br/>
 						<div>
 							<label for="longitude">Longitude :</label>
 							<input [(ngModel)]="place.longitude" class="form-control">
-						</div>
+						</div><br/>
+
+						<label for="select-salle">Salle :</label>
+						<select class="form-control" id = "select-salle" [(ngModel)]= "place.salle">
+							<option *ngFor="let s of salles" [ngValue] = "s">
+							  {{s.name}}
+							</option>
+						</select>
 						
 						<button (click)="saveplaces()" class="btn bg-primary spacer espace">
 							Ajouter
@@ -46,11 +53,13 @@
                         <table class="table table-striped">
                             <tr>
                                 <td>ID</td>
-                                <td>Numero</td>
+								<td>Numero</td>
+								<td>Salle</td>
                             </tr>
                             <tr *ngFor="let p of places">
                                 <td>{{p.idPlace}}</td>
-                                <td>{{p.numero}}</td>
+								<td>{{p.numero}}</td>
+								<td>{{p.salle.name}}</td>
 								<td><button class="btn btn-success btn-sm" (click)="detail(p.idPlace)">Details</button></td>
 								<td><button class="btn btn-danger btn-sm" (click)="supprimer(p.idPlace)">Supprimer</button></td>
                                 <br><br>

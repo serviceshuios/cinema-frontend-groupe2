@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Places } from '../models/places.model';
 import { PlacesService } from '../services/places.service';
+import { Salle } from '../models/salle.model';
+import { SalleService } from '../services/salle.service';
 
 @Component({
   selector: 'app-places',
@@ -16,14 +18,16 @@ numero: 0,
  latitude: 0,
  altitude: 0,
  longitude: 0,
+ salle: null,
   };
-  places;
+  places; salles;
 
-  constructor(private placesService: PlacesService) { }
+  constructor(private placesService: PlacesService, private salleService: SalleService) { }
 
 
    ngOnInit() {
     this.retrouverTout();
+    this.retrouverToutSalle();
   }
 
   saveplaces() {
@@ -31,11 +35,13 @@ numero: 0,
       .subscribe(data => {
         this.place = data;
         this.retrouverTout();
+        this.retrouverToutSalle();
         this.place.altitude = 0;
         this.place.latitude = 0;
         this.place.idPlace = 0;
         this.place.longitude = 0;
         this.place.numero = 0;
+        this.place.salle = null;
 
       });
   }
@@ -45,6 +51,13 @@ numero: 0,
       .subscribe(data => {
         this.places = data;
       });
+  }
+
+  retrouverToutSalle() {
+    this.salleService.recupererTout()
+      .subscribe(data => {
+        this.salles = data
+      })
   }
 
   retrouver(id: number) {
