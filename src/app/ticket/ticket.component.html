@@ -1,28 +1,39 @@
 <div class="container">
-	<div class="row">
+	<div class="col-md-6">
 			<div class="panel panel-danger">
 				<div class="panel-heading">
-					<h4>Lister les tickets</h4>
+					<h4>Liste des tickets</h4>
 				</div>
 				<div class="panel-body">
-					<div *ngIf="tickets.length>0">
-						<h3>Liste des tickets</h3>
+<div>
+	
+</div>
 						<table class="table table-striped">
-						<tr>
-                            <td>ID</td>
-							<td>NOM DU CLIENT</td>
-                            <td>CODE DE PAIEMENT</td>
-                            <td>RESERVEE</td>                          
-                        </tr>
-						<tr *ngFor="let t of tickets">
+							<tr>
+								<td>ID</td>
+								<td>Nom du client</td>
+								<td>Prix</td>
+								<td>Code du paiement</td>
+								<td>Reservation</td>
+								
+							</tr>
+							<tr *ngFor="let t of tickets">
 								<td>{{t.idTicket}}</td>
 								<td>{{t.nomClient}}</td>
+								<td>{{t.prix}}</td>
 								<td>{{t.codePayement}}</td>
 								<td>{{t.reservee}}</td>
-						</tr>
+								
+
+								
+								
+								
+
+							</tr>
 						</table>
 					</div>
 				</div>
+			</div>
 		</div>
-	</div>
-</div>
+
+

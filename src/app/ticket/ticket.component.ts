@@ -17,7 +17,7 @@ export class TicketComponent implements OnInit {
     nomClient: '',
     prix: 0,
     codePayement: 0,
-    reservee: false
+    reservee: true
   };
   // liste des tickets
   tickets;
