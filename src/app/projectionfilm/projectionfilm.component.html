@@ -66,17 +66,22 @@
                             <tr>
                                 <td>ID</td>
 								<td>Date</td>
-								<td>Prix</td>
+								<td>Salles</td>
+								<td>Seances</td>
+								<td>Films</td>
+								
                             </tr>
                             <tr *ngFor="let p of projectionfilms">
                                 <td>{{p.idProjectionFilm}}</td>
 								<td>{{p.dateProjection | date : 'dd/MM/yyyy'}}</td>
-								<td>{{p.prix}}</td>
+								<td>{{p.salle.name}}</td>
+								<td>{{p.seance.heureDebut  | date : 'HH:mm'}}</td>
+								<td>{{p.film.titre}}</td>
                                 <br><br>
 								<td></td>
-								<td><button class="btn btn-success btn-sm" (click)="detail(p.idProjectionfilm)">Modifier</button></td>
+								<td><button class="btn btn-success btn-sm" (click)="detail(p.idProjectionFilm)">Modifier</button></td>
 								<br><br>
-								<td><button class="btn btn-danger btn-sm" (click)="supprimer(p.idProjectionfilm)">Supprimer</button></td>
+								<td><button class="btn btn-danger btn-sm" (click)="supprimer(p.idProjectionFilm)">Supprimer</button></td>
                             </tr>
                         </table>
 					</div>
