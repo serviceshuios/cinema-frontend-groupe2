@@ -5,8 +5,11 @@ import { Ville } from './models/ville.model';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+
+
 })
+
 export class AppComponent {
   title = 'cinema-frontend-groupe2';
   ville: Ville = {
