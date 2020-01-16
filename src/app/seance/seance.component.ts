@@ -11,6 +11,14 @@ export class SeanceComponent implements OnInit {
 
   // props HAHA HOHO
 
+  heure: string;
+  minute: string;
+
+  // permet de recuperer le time from html
+  horaire: string;
+  // permet la modif de horaire pr avoir le bon time
+  trueHoraire: string;
+
   // recupere la seance saisie
   seance: Seance = {
     idSeance: 0,
@@ -18,6 +26,11 @@ export class SeanceComponent implements OnInit {
   };
   // liste des seances
   seances;
+
+  // pr modif
+  test: string;
+  retest: string;
+  modiftest: string;
 
   // ctor
   constructor(private seanceService: SeanceService) { }
@@ -28,13 +41,19 @@ export class SeanceComponent implements OnInit {
   }// end ngOnInit
 
   saveSeance() {
+    // modif de horaire via trueHoraire
+    this.trueHoraire =  Number(this.horaire.substr(0, this.horaire.length - 3)) - 1 + this.horaire.substr(2, this.horaire.length);
+    // injection de cette trueHoraire dans seance
+    this.seance.heureDebut = new Date('01 Jan 1970 ' + this.trueHoraire + ' GMT');
     // appel à la méthode de la couche service
     this.seanceService.addSeance(this.seance)
                       // on s'inscrit pr suivre ce qui se passe (comme ds body d'un controller en java)
                        .subscribe(data => {
+                        //  this.seance.heureDebut = new Date(2000, 10, 11, 10, 12, 42, 11);
                          this.seance = data;
                          this.getAllSeances();
-                         this.seance.heureDebut = new Date();
+                         this.seance.heureDebut = null;
+                         this.horaire = '';
                        });
   }// end saveSeance
 
@@ -49,6 +68,8 @@ export class SeanceComponent implements OnInit {
     this.seanceService.getSeance(id)
                        .subscribe( data => {
                         this.seance = data;
+                        this.test = this.seance.heureDebut.toString();
+                        this.retest = this.test.substr(11, this.test.length - 23);
                        });
   }// end detailSeance
 

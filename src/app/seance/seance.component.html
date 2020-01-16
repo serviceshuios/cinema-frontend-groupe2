@@ -10,18 +10,36 @@
 					<!-- le formulaire de saisie de Seance -->
 					<div>
 						<div>
-							<label for="heureDebut"> heure de debut de la seance : </label>
-							<input id="heureDebut" type="time" [(ngModel)]="seance.heureDebut" class="required">
+							<label for="heureDebut"> Heure de la seance : </label>
+							<input id="heureDebut" type="time" [(ngModel)]="horaire" class="form-control">
 						</div>
-						
+
+						<!-- <div>
+							<label for="heureDebut"> Heure de la seance : </label>
+							<input id="heureDebut" type="text" [(ngModel)]="heure" class="form-control">
+						</div>
+
+						<div>
+							<label for="minuteDebut"> Minute de la seance : </label>
+							<input id="minuteDebut" type="text" [(ngModel)]="minute" class="form-control">
+						</div> -->
+
+						<br>
 						<button (click)="saveSeance()" class="btn bg-primary spacer espace">
 							Ajouter
 						</button>
 					</div>
 				</div>
 			</div>
+			La modification de la seance est en cours de developpement.
 		</div> 
 
+		<!-- Heure{{heure}}<br>
+		Min{{minute}}<br>
+		Horaire{{horaire}}<br>
+		{{seance.idSeance}} <br>
+		Seance : {{seance.heureDebut}} <br>
+		Test : {{retest}} -->
 
 		<div class="col-md-6">
 			<div class="panel panel-danger">
@@ -37,8 +55,12 @@
 							<td>HEURE DE DEBUT</td>                        
                         </tr>
 						<tr *ngFor="let s of seances">
-								<td>{{s.idSeance}}</td>
-								<td>{{s.heureDebut}}</td>
+							<td>{{s.idSeance}}</td>
+							<td>{{s.heureDebut | date : 'HH:mm'}}</td>
+							<td><button class="btn btn-success btn-sm" (click)="detailSeance(s.idSeance)">Modifier</button></td>
+                            <br><br>
+                            <td><button class="btn btn-danger btn-sm" (click)="deleteSeance(s.idSeance)">Supprimer</button></td>
+                            <td></td>
 						</tr>
 						</table>
 					</div>
