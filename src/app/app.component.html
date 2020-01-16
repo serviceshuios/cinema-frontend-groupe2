@@ -34,8 +34,8 @@
 									<span><strong>Client</strong></span>
 									<span class="drawer__arrow">[]</span>
 								</span>
-								<ul class="drawer__content" *ngFor="let v of villes">
-									<li>{{v.name}}</li>
+								<ul class="drawer__content">
+									<li><a [routerLink]="['client']">Reservation</a></li>
 								</ul>
 							</div>
 						</td>
@@ -46,6 +46,8 @@
 			</ul>
 		</div>
 	</nav>
+
+	<!-- {{CheminComplet}} -->
 
 	<div class="container">
 		<router-outlet></router-outlet>

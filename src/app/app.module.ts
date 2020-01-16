@@ -17,6 +17,7 @@ import { TicketComponent } from './ticket/ticket.component';
 import { FilmComponent } from './film/film.component';
 import { ProjectionfilmComponent } from './projectionfilm/projectionfilm.component';
 import { HomeComponent } from './home/home.component';
+import { ClientComponent } from './client/client.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { HomeComponent } from './home/home.component';
     TicketComponent,
     FilmComponent,
     ProjectionfilmComponent,
-    HomeComponent
+    HomeComponent,
+    ClientComponent
 
   ],
   imports: [

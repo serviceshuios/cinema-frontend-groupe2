@@ -8,6 +8,9 @@ import { Ville } from './models/ville.model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  CheminComplet = document.location.href;
+
   title = 'cinema-frontend-groupe2';
   ville: Ville = {
 
