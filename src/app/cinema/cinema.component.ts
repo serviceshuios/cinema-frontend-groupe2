@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Cinema } from '../models/Cinema.model';
 import { CinemaService } from '../services/Cinema.service';
+import { Ville } from '../models/Ville.model';
+import { VilleService } from '../services/Ville.service';
 
 @Component({
   selector: 'app-cinema',
@@ -13,19 +15,21 @@ export class CinemaComponent implements OnInit {
 
     id: 0,
     name: '',
+    longitude: 0,
     latitude: 0,
     altitude: 0,
-    longitude: 0,
     nombreSalles: 0,
+    ville: null
   };
 
   // liste des Cinemas
-  cinemas;
+  cinemas; villes;
 
-  constructor(private cinemaService: CinemaService) { }
+  constructor(private cinemaService: CinemaService, private villeService: VilleService) { }
 
   ngOnInit() {
     this.retrouverTout();
+    this.retrouverToutVille();
   }
 
   saveCinema() {
@@ -33,8 +37,11 @@ export class CinemaComponent implements OnInit {
       .subscribe(data => {
         this.cinema = data;
         this.retrouverTout();
+        this.retrouverToutVille();
+        this.cinema.id = 0;
         this.cinema.name = '';
         this.cinema.nombreSalles = 0;
+        this.cinema.ville = null;
       });
 
   }
@@ -43,6 +50,14 @@ export class CinemaComponent implements OnInit {
     this.cinemaService.retrouverTout()
       .subscribe(data => {
         this.cinemas = data;
+      });
+
+  }
+
+  retrouverToutVille() {
+    this.villeService.recupererTout()
+      .subscribe(data => {
+        this.villes = data;
       });
 
   }

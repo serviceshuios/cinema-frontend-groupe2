@@ -12,23 +12,30 @@
 						<div>
 							<label for="name">Nom : </label>
 							<input [(ngModel)]="cinema.name" class="form-control">
-						</div>
+						</div><br/>
 						<div>
 							<label for="nombresalles">Nombre de salles :</label>
 							<input [(ngModel)]="cinema.nombreSalles" class="form-control">
-						</div>
+						</div><br/>
 						<div>
 							<label for="altitude">Altitude :</label>
 							<input [(ngModel)]="cinema.altitude" class="form-control">
-						</div>
+						</div><br/>
 						<div>
 							<label for="latitude">Latitude :</label>
 							<input [(ngModel)]="cinema.latitude" class="form-control" >
-						</div>
+						</div><br/>
 						<div>
 							<label for="longitude">Longitude :</label>
 							<input [(ngModel)]="cinema.longitude" class="form-control" >
-						</div>
+						</div><br/>
+
+						<label for="select-ville">Ville :</label>
+						<select class="form-control" id = "select-ville" [(ngModel)]= "cinema.ville">
+							<option *ngFor="let v of villes" [ngValue] = "v">
+							  {{v.name}}
+							</option>
+						</select><br/>
 						
 						<button (click)="saveCinema()" class="btn bg-primary spacer espace">
 							Ajouter
@@ -58,7 +65,8 @@
                             </tr>
                             <tr *ngFor="let c of cinemas">
                                 <td>{{c.id}}</td>
-                                <td>{{c.name}}</td>
+								<td>{{c.name}}</td>
+								<td>{{c.ville.name}}</td>
 								<td><button class="btn btn-success btn-sm" (click)="detail(c.id)">Modifier</button></td>
 								<td><button class="btn btn-danger btn-sm" (click)="supprimer(c.id)">Supprimer</button></td>
                                 <br><br>
