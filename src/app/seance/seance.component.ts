@@ -52,6 +52,7 @@ export class SeanceComponent implements OnInit {
                         //  this.seance.heureDebut = new Date(2000, 10, 11, 10, 12, 42, 11);
                          this.seance = data;
                          this.getAllSeances();
+                         this.seance.idSeance = 0;
                          this.seance.heureDebut = null;
                          this.horaire = '';
                        });
