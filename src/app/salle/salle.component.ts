@@ -11,10 +11,13 @@ export class SalleComponent implements OnInit {
 
    salle: Salle = {
 
-id: 0,
+ id: 0,
  name: '',
- nombrePlaces: 0
+ nombrePlaces: 0,
+ cinema: null,
+
   };
+
   // liste des salles
   salles;
 
@@ -31,6 +34,7 @@ id: 0,
         this.salle.id = 0;
         this.salle.name = '';
         this.salle.nombrePlaces = 0;
+        this.salle.cinema = null;
       });
   }
 
@@ -65,5 +69,7 @@ this.salleService.recuperer(id)
 this.salle = data;
 })
 }
+
+
 
 }
