@@ -1,7 +1,15 @@
 div{
-	text-align: center;
+  text-align: center;
+}
+a.navbar-brand{
+  color : black;
+  text-shadow: 2px 2px gray;
 }
 
+
+div.drawer{padding-right: 30px;
+           padding-top: 10px;
+}
 
   .espace{
 	margin-left: 10px !important;
