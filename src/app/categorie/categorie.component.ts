@@ -34,6 +34,7 @@ export class CategorieComponent implements OnInit {
                        .subscribe(data => {
                          this.categorie = data;
                          this.getAllCategories();
+                         this.categorie.idCategorie = 0;
                          this.categorie.name = '';
                        });
   }// end saveCategorie
