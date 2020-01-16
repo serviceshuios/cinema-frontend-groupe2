@@ -41,7 +41,6 @@ idFilm: 0,
     this.getAllCategories();
   }
 
- 
 
   savefilm() {
     this.filmService.ajouter(this.film)
@@ -49,6 +48,7 @@ idFilm: 0,
         this.film = data;
         this.retrouverTout();
         this.getAllCategories();
+        this.film.idFilm = 0;
         this.film.photo = '' ;
         this.film.duree = 0;
         this.film.description = '' ;
@@ -57,10 +57,7 @@ idFilm: 0,
         this.film.titre = '';
         this.film.categorie = null;
         this.film.categorie.idCategorie = 0;
-       
-        
 
-   
 
       });
   }
