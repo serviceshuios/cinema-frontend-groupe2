@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Salle } from '../models/salle.model';
 import { SalleService } from '../services/salle.service';
-import { Cinema } from '../models/cinema.model';
+
 import { CinemaService } from '../services/cinema.service';
 
 @Component({

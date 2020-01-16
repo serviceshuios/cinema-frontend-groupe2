@@ -9,7 +9,7 @@
 				<div class="panel-body">
 					<!-- le formulaire de saisie de film -->
 					<div>
-						
+
 						<div>
 							<label for="titre">Titre :</label>
 							<input [(ngModel)]="film.titre" class="form-control">
@@ -25,23 +25,30 @@
 						<div>
 							<label for="description">Description :</label>
 							<input [(ngModel)]="film.description" class="form-control">
-            </div>
-            	<div>
+						</div>
+						<div>
 							<label for="photo">Photo :</label>
 							<input [(ngModel)]="film.photo" class="form-control">
-            </div>
-            	<div>
+						</div>
+						<div>
 							<label for="dateSortie">Date de sortie :</label>
 							<input type="date" [(ngModel)]="film.dateSortie" class="form-control">
 						</div>
-						
+						<div>
+								<label for="select-categorie">Categorie :</label>
+						<select class="form-control" id = "select-categorie" [(ngModel)]= "film.categorie">
+							<option *ngFor="let c of categories" [ngValue] = "c">
+							  {{c.name}}
+							</option>
+						</select>
+						</div>
 						<button (click)="savefilm()" class="btn bg-primary spacer espace">
 							Ajouter
 						</button>
 					</div>
 				</div>
 			</div>
-		</div> 
+		</div>
 		<!-- Liste des films -->
 		<div class="col-md-6">
 			<div class="panel panel-danger">
@@ -50,34 +57,39 @@
 				</div>
 				<div class="panel-body">
 					<div *ngIf="films.length>0">
-                       
-                        <table class="table table-striped">
-                            <tr>
-                                <td>ID</td>
+
+						<table class="table table-striped">
+							<tr>
+								<td>ID</td>
 								<td>Titre</td>
 								<td>Date de sortie</td>
 								<td>Duree</td>
 								<td>Realisateur</td>
 								<td>Photo</td>
-                            </tr>
-                            <tr *ngFor="let f of films">
-                                <td>{{f.idFilm}}</td>
+								<td>Categorie</td>
+							</tr>
+							<tr *ngFor="let f of films">
+								<td>{{f.idFilm}}</td>
 								<td>{{f.titre}}</td>
-								<td>{{f.dateSortie| date:"dd/MM/yyyy"}}</td>
+								<td>{{f.dateSortie | date:"dd/MM/yyyy"}}</td>
 								<td>{{f.duree}}</td>
 								<td>{{f.realisateur}}</td>
 								<td>{{f.photo}}</td>
-								<td><button class="btn btn-success btn-sm" (click)="detail(f.idFilm)">Modifier</button></td>
+								<td>{{f.categorie.name}}</td> 
+
+								<td><button class="btn btn-success btn-sm" (click)="detail(f.idFilm)">Modifier</button>
+								</td>
 								<br><br>
-								<td><button class="btn btn-danger btn-sm" (click)="supprimer(f.idFilm)">Supprimer</button></td>
-                               
-                                <td></td>
-                            </tr>
-                        </table>
+								<td><button class="btn btn-danger btn-sm"
+										(click)="supprimer(f.idFilm)">Supprimer</button></td>
+
+								<td></td>
+							</tr>
+						</table>
 					</div>
 				</div>
 			</div>
-		</div> 
+		</div>
 	</div>
 </div>
 

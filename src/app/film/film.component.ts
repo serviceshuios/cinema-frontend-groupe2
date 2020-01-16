@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Film } from '../models/film.model';
 import { FilmService } from '../services/film.service';
+import { CategorieService } from '../services/categorie.service';
+
+
 
 @Component({
   selector: 'app-film',
@@ -16,33 +19,48 @@ idFilm: 0,
  duree: 0,
  titre: '',
  photo: '',
- realisateur: ''
-
-
+ realisateur: '',
+ categorie: null,
 
   };
+
   // liste des films
   films;
 
-  constructor(private filmService: FilmService) { }
+  // liste de categories
+  categories;
+
+
+
+  constructor(private filmService: FilmService, private categorieService: CategorieService) { }
 
 
 
   ngOnInit() {
     this.retrouverTout();
+    this.getAllCategories();
   }
+
+ 
 
   savefilm() {
     this.filmService.ajouter(this.film)
       .subscribe(data => {
         this.film = data;
         this.retrouverTout();
+        this.getAllCategories();
         this.film.photo = '' ;
         this.film.duree = 0;
         this.film.description = '' ;
         this.film.dateSortie = new Date();
         this.film.realisateur = '';
         this.film.titre = '';
+        this.film.categorie = null;
+        this.film.categorie.idCategorie = 0;
+       
+        
+
+   
 
       });
   }
@@ -78,5 +96,11 @@ this.filmService.recuperer(id)
 this.film = data;
 });
 }
+ getAllCategories() {
+    this.categorieService.getAllCategories()
+                       .subscribe(data => {
+                         this.categories = data;
+                       });
+  }// end getAllCategories
 
 }

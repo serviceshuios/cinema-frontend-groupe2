@@ -30,7 +30,7 @@ return this.httpClient.delete<Cinema>(this.host + '/cinemas/' + id);
 }
 
 public modifier(id: number, cinema: Cinema) {
-return this.httpClient.put<Cinema>(this.host + '/cinemas/' + id, Cinema);
+return this.httpClient.put<Cinema>(this.host + '/cinemas/' + id, cinema);
 }
 
 

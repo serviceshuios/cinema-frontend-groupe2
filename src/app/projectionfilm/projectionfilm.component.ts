@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Projectionfilm } from '../models/projectionfilm.model';
 import { ProjectionfilmService } from '../services/projectionfilm.service';
+import { SalleService } from '../services/salle.service';
+import { SeanceService } from '../services/seance.service';
+import { FilmService } from '../services/film.service';
 
 @Component({
   selector: 'app-projectionfilm',
@@ -13,16 +16,32 @@ export class ProjectionfilmComponent implements OnInit {
 
     idProjectionFilm: 0,
     dateProjection: null,
-    prix: 0
+    prix: 0,
+    salle: null,
+    seance: null,
+    film: null
 
   };
   // liste des projectionfilms
   projectionfilms;
 
-  constructor(private projectionfilmService: ProjectionfilmService) { }
+  // Liste des salles
+  salles;
+
+  // Liste des seances
+  seances;
+
+  // Liste des films
+  films;
+
+  constructor(private projectionfilmService: ProjectionfilmService, private salleService: SalleService,
+    private seanceService: SeanceService, private filmService: FilmService) { }
 
   ngOnInit() {
     this.retrouverTout();
+    this.retrouverToutesSalles();
+    this.getAllSeances();
+    this.retrouverTousFilms();
   }
 
   saveProjectionfilm() {
@@ -64,6 +83,24 @@ export class ProjectionfilmComponent implements OnInit {
     this.projectionfilmService.retrouver(id)
       .subscribe(data => {
         this.projectionfilm = data;
+      });
+  }
+  retrouverToutesSalles() {
+    this.salleService.recupererTout()
+      .subscribe(data => {
+        this.salles = data
+      })
+  }
+  getAllSeances() {
+    this.seanceService.getAllSeances()
+                       .subscribe(data => {
+                         this.seances = data;
+                       });
+  }// end getAllSeances
+  retrouverTousFilms() {
+    this.filmService.recupererTout()
+      .subscribe(data => {
+        this.films = data;
       });
   }
 

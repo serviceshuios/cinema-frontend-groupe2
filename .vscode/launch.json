@@ -27,6 +27,14 @@
       "port": 9268,
       "webRoot": "${workspaceFolder}",
       "url": "http://localhost:4201/"
+    },
+    {
+      "name": "Launch Chrome cinema-frontend-groupe2 on Angular CLI Server (1)",
+      "type": "chrome",
+      "request": "launch",
+      "port": 9232,
+      "webRoot": "${workspaceFolder}",
+      "url": "http://localhost:4200/#"
     }
   ]
 }
