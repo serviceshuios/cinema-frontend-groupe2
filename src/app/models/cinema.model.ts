@@ -9,6 +9,6 @@ public longitude: number;
 public latitude: number;
 public altitude: number;
 public nombreSalles: number;
-public ville: Ville;
+public ville: Ville; 
 
 }

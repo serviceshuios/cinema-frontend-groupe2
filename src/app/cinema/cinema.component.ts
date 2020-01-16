@@ -12,7 +12,7 @@ import { VilleService } from '../services/Ville.service';
 export class CinemaComponent implements OnInit {
 
   cinema: Cinema = {
-
+ 
     id: 0,
     name: '',
     longitude: 0,

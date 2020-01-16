@@ -35,7 +35,7 @@ export class ProjectionfilmComponent implements OnInit {
   films;
 
   constructor(private projectionfilmService: ProjectionfilmService, private salleService: SalleService,
-    private seanceService: SeanceService, private filmService: FilmService) { }
+              private seanceService: SeanceService, private filmService: FilmService) { }
 
   ngOnInit() {
     this.retrouverTout();
@@ -49,6 +49,7 @@ export class ProjectionfilmComponent implements OnInit {
       .subscribe(data => {
         this.projectionfilm = data;
         this.retrouverTout();
+        this.projectionfilm.idProjectionFilm = 0;
         this.projectionfilm.dateProjection = null;
         this.projectionfilm.prix = 0;
       });

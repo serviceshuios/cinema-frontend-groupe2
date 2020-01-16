@@ -37,6 +37,7 @@ export class TicketComponent implements OnInit {
                        .subscribe(data => {
                          this.ticket = data;
                          this.getAllTickets();
+                         this.ticket.idTicket = 0;
                          this.ticket.nomClient = '';
                          this.ticket.prix = 0;
                          this.ticket.codePayement = 0;
