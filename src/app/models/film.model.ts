@@ -8,7 +8,5 @@ export class Film {
 	description: string;
 	photo: string;
 	dateSortie: Date;
-	categorie: Categorie;
-	
-	
+
 }

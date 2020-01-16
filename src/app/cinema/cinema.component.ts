@@ -9,14 +9,14 @@ import { CinemaService } from '../services/Cinema.service';
 })
 export class CinemaComponent implements OnInit {
 
- cinema: Cinema = {
+  cinema: Cinema = {
 
-id: 0,
- name: '',
- latitude: 0,
- altitude: 0,
- longitude: 0,
- nombreSalles: 0
+    id: 0,
+    name: '',
+    latitude: 0,
+    altitude: 0,
+    longitude: 0,
+    nombreSalles: 0,
   };
 
   // liste des Cinemas
@@ -31,9 +31,10 @@ id: 0,
   saveCinema() {
     this.cinemaService.saveCinema(this.cinema)
       .subscribe(data => {
-        this.cinema = data
+        this.cinema = data;
         this.retrouverTout();
         this.cinema.name = '';
+        this.cinema.nombreSalles = 0;
       });
 
   }
@@ -41,8 +42,8 @@ id: 0,
   retrouverTout() {
     this.cinemaService.retrouverTout()
       .subscribe(data => {
-        this.cinemas = data
-      })
+        this.cinemas = data;
+      });
 
   }
 
@@ -50,7 +51,7 @@ id: 0,
     this.cinemaService.retrouver(id)
       .subscribe(data => {
         this.cinema = data;
-      })
+      });
   }
 
   supprimer(id: number) {
@@ -59,10 +60,10 @@ id: 0,
   }
 
 
-detail(id: number) {
-this.cinemaService.retrouver(id)
-.subscribe(data => {
-this.cinema = data;
-})
-}
+  detail(id: number) {
+    this.cinemaService.retrouver(id)
+      .subscribe(data => {
+        this.cinema = data;
+      });
+  }
 }
