@@ -19,12 +19,12 @@
 							<input [(ngModel)]="salle.nombrePlaces" class="form-control">
 						</div><br/>
 						
-						<!--<label for="nombre">Cinema :</label>
-						<select class="form-control" [(ngModel)]= "salle.cinema">
-							<option *ngFor="let c of cinemas [ngValue] = salle.cinema">
-							 {{c.id}} {{c.name}}
+						<label for="select-cinema">Cinema :</label>
+						<select class="form-control" id = "select-cinema" [(ngModel)]= "salle.cinema">
+							<option *ngFor="let c of cinemas" [ngValue] = "c">
+							  {{c.name}}
 							</option>
-						</select>-->
+						</select>
 						L'implementation de la selection du cinema ne marche pas
 						<div>							
 						</div><br/>
@@ -51,13 +51,13 @@
                                 <td>ID</td>
 								<td>Salle</td>
 								<td>Nombre de places</td>
-								<td>Film</td>
+								<td>Cinema</td>
                             </tr>
                             <tr *ngFor="let s of salles">
                                 <td>{{s.id}}</td>
 								<td>{{s.name}}</td>
 								<td>{{s.nombrePlaces}}</td>
-								<td>{{s.film.titre}}</td>
+								<td>{{s.cinema.name}}</td>
 								<td><button class="btn btn-success btn-sm" (click)="detail(s.id)">Details</button></td>
 								<td><button class="btn btn-danger btn-sm" (click)="supprimer(s.id)">Supprimer</button></td>
                                 <br><br>

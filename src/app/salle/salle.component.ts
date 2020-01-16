@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Salle } from '../models/salle.model';
 import { SalleService } from '../services/salle.service';
+import { Cinema } from '../models/cinema.model';
+import { CinemaService } from '../services/cinema.service';
 
 @Component({
   selector: 'app-salle',
@@ -19,18 +21,20 @@ export class SalleComponent implements OnInit {
   };
 
   // liste des salles
-  salles;
+  salles; cinemas;
 
-  constructor(private salleService: SalleService) { }
+  constructor(private salleService: SalleService, private cinemaService: CinemaService) { }
 
   ngOnInit() {
     this.retrouverTout();
+    this.retrouverToutCinema();
   }
    saveSalle() {
     this.salleService.ajouter(this.salle)
       .subscribe(data => {
         this.salle = data
         this.retrouverTout();
+        this.retrouverToutCinema();
         this.salle.id = 0;
         this.salle.name = '';
         this.salle.nombrePlaces = 0;
@@ -42,6 +46,13 @@ export class SalleComponent implements OnInit {
     this.salleService.recupererTout()
       .subscribe(data => {
         this.salles = data
+      })
+  }
+
+   retrouverToutCinema() {
+    this.cinemaService.retrouverTout()
+      .subscribe(data => {
+        this.cinemas = data
       })
   }
 
