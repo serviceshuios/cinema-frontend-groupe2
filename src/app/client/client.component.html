@@ -3,7 +3,7 @@
 		<!-- left part -->
 		<div class="col-md-12">
 			<div class="panel panel-primary">
-				<div class="panel-heading">
+				<div class="panel-heading" style="background-color: orangered">
 					<h4>Reservation d'une place de cinema</h4>
 				</div>
 				<div class="panel-body">
@@ -23,7 +23,7 @@
 									</option>
 								</select><br>
 								<button (click)="retrouverToutCinema(cinema.ville)"
-									class="btn bg-primary spacer espace">
+									class="btn bg-primary spacer espace" style="background-color: orangered">
 									Rechercher
 								</button>
 							</td>
@@ -37,7 +37,7 @@
 									</option>
 								</select><br>
 								<button (click)="retrouverToutSalle(salle.cinema.id)"
-									class="btn bg-primary spacer espace">
+									class="btn bg-primary spacer espace" style="background-color: orangered">
 									Rechercher
 								</button>
 							</td>
@@ -46,8 +46,8 @@
 					<!--Mettre les salles-->
 					<div *ngFor="let s of salles">
 						<div class="col-md-6">
-							<div class="panel panel-danger">
-								<div class="panel-heading">
+							<div class="panel panel-primary">
+								<div class="panel-heading" style="background-color: orangered">
 									Salle {{s.name}}
 								</div>
 								<div class="panel-body">
@@ -55,7 +55,7 @@
 									<!-- <td> -->
 									<div class="col-md-6">
 										<!--l'image du film-->
-										<div class="panel panel-danger">
+										<div class="panel panel-primary">
 											<div class="panel-body">
 												image du film <br>
 												(a venir)
@@ -66,8 +66,8 @@
 										<td> -->
 									<div class="col-md-6">
 										<!--la liste des seances-->
-										<div class="panel panel-danger">
-											<div class="panel-heading">
+										<div class="panel panel-primary">
+											<div class="panel-heading" style="background-color: orangered">
 												Seances
 											</div>
 											<div class="panel-body">

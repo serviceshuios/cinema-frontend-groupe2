@@ -3,7 +3,7 @@
 		<!-- Ajout d'une place -->
 		<div class="col-md-6">
 			<div class="panel panel-primary">
-				<div class="panel-heading">
+				<div class="panel-heading" style="background-color: black">
 					<h4>Ajouter une place</h4>
 				</div>
 				<div class="panel-body">
@@ -32,9 +32,9 @@
 							<option *ngFor="let s of salles" [ngValue] = "s">
 							  {{s.name}}
 							</option>
-						</select>
+						</select><br>
 						
-						<button (click)="saveplaces()" class="btn bg-primary spacer espace">
+						<button (click)="saveplaces()" class="btn bg-primary spacer espace" style="background-color: black">
 							Ajouter
 						</button>
 					</div>
@@ -43,8 +43,8 @@
 		</div> 
 		<!-- Liste des places -->
 		<div class="col-md-6">
-			<div class="panel panel-danger">
-				<div class="panel-heading">
+			<div class="panel panel-primary">
+				<div class="panel-heading" style="background-color: black">
 					<h4>Liste des places</h4>
 				</div>
 				<div class="panel-body">

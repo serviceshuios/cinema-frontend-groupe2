@@ -3,9 +3,9 @@
 		<!-- Ajout d'une projection -->
 		<div class="col-md-6">
 			<div class="panel panel-primary">
-				<div class="panel-heading">
+				<div class="panel-heading" style="background-color: black">
 					<h4>Ajouter une projection</h4>
-				</div> 
+				</div>
 				<div class="panel-body">
 					<!-- le formulaire de saisie de la projection -->
 					<div>
@@ -19,74 +19,74 @@
 							<input [(ngModel)]="projectionfilm.prix" class="form-control">
 						</div>
 						<div>
-								<label for="select-salle">Salles :</label>
-						<select class="form-control" id = "select-salle" [(ngModel)]= "projectionfilm.salle">
-							<option *ngFor="let s of salles" [ngValue] = "s">
-							  {{s.name}}
-							</option>
-						</select>
+							<label for="select-salle">Salles :</label>
+							<select class="form-control" id="select-salle" [(ngModel)]="projectionfilm.salle">
+								<option *ngFor="let s of salles" [ngValue]="s">
+									{{s.name}}
+								</option>
+							</select>
 						</div>
 						<div>
-								<label for="select-seance">Seances :</label>
-						<select class="form-control" id = "select-seance" [(ngModel)]= "projectionfilm.seance">
-							<option *ngFor="let se of seances" [ngValue] = "se">
-							  {{se.heureDebut | date:'HH:mm'}}
-							</option>
-						</select>
+							<label for="select-seance">Seances :</label>
+							<select class="form-control" id="select-seance" [(ngModel)]="projectionfilm.seance">
+								<option *ngFor="let se of seances" [ngValue]="se">
+									{{se.heureDebut | date:'HH:mm'}}
+								</option>
+							</select>
 						</div>
 						<div>
-								<label for="select-film">Films :</label>
-						<select class="form-control" id = "select-film" [(ngModel)]= "projectionfilm.film">
-							<option *ngFor="let f of films" [ngValue] = "f">
-							  {{f.titre}}
-							</option>
-						</select>
+							<label for="select-film">Films :</label>
+							<select class="form-control" id="select-film" [(ngModel)]="projectionfilm.film">
+								<option *ngFor="let f of films" [ngValue]="f">
+									{{f.titre}}
+								</option>
+							</select>
 						</div>
-
-						<button (click)="saveProjectionfilm()" class="btn bg-primary spacer espace">
+						<br>
+						<button (click)="saveProjectionfilm()" class="btn bg-primary spacer espace" style="background-color: black">
 							Ajouter
 						</button>
 
 					</div>
 				</div>
 			</div>
-		</div> 
-
+		</div>
 
 		<!-- Liste des projections -->
 		<div class="col-md-6">
-			<div class="panel panel-danger">
-				<div class="panel-heading">
+			<div class="panel panel-primary">
+				<div class="panel-heading" style="background-color: black">
 					<h4>Liste des projections</h4>
 				</div>
 				<div class="panel-body">
 					<div *ngIf="projectionfilms.length>0">
-                       
-                        <table class="table table-striped">
-                            <tr>
-                                <td>ID</td>
+
+						<table class="table table-striped">
+							<tr>
+								<td>ID</td>
 								<td>Date</td>
 								<td>Salles</td>
 								<td>Seances</td>
 								<td>Films</td>
-								
-                            </tr>
-                            <tr *ngFor="let p of projectionfilms">
-                                <td>{{p.idProjectionFilm}}</td>
+
+							</tr>
+							<tr *ngFor="let p of projectionfilms">
+								<td>{{p.idProjectionFilm}}</td>
 								<td>{{p.dateProjection | date : 'dd/MM/yyyy'}}</td>
 								<td>{{p.salle.name}}</td>
 								<td>{{p.seance.heureDebut  | date : 'HH:mm'}}</td>
 								<td>{{p.film.titre}}</td>
-                                <br><br>
+								<br><br>
 								<td></td>
 								<td><button class="btn btn-success btn-sm" (click)="detail(p.idProjectionFilm)">Modifier</button></td>
 								<br><br>
-								<td><button class="btn btn-danger btn-sm" (click)="supprimer(p.idProjectionFilm)">Supprimer</button></td>
-                            </tr>
-                        </table>
+								<td><button class="btn btn-danger btn-sm" (click)="supprimer(p.idProjectionFilm)">Supprimer</button>
+								</td>
+							</tr>
+						</table>
 					</div>
 				</div>
 			</div>
-		</div> 
+		</div>
 	</div>
 </div>

@@ -13,25 +13,28 @@ export class ProjectionfilmService {
   constructor(private httpClient: HttpClient) { }
 
 
-public retrouverTout(): Observable<Projectionfilm> {
-return this.httpClient.get<Projectionfilm>(this.host + '/projectionFilms');
-}
+  public retrouverTout(): Observable<Projectionfilm> {
+    return this.httpClient.get<Projectionfilm>(this.host + '/projectionFilms');
+  }
 
-public retrouver(id: number): Observable<Projectionfilm> {
-return this.httpClient.get<Projectionfilm>(this.host + '/projectionFilms/' + id);
-}
+  public retrouver(id: number): Observable<Projectionfilm> {
+    return this.httpClient.get<Projectionfilm>(this.host + '/projectionFilms/' + id);
+  }
 
-public ajouter(projectionfilm: Projectionfilm) {
-return this.httpClient.post<Projectionfilm>(this.host + '/projectionFilms/', projectionfilm);
-}
+  public ajouter(projectionfilm: Projectionfilm) {
+    return this.httpClient.post<Projectionfilm>(this.host + '/projectionFilms/', projectionfilm);
+  }
 
-public supprimer(id: number) {
-return this.httpClient.delete<Projectionfilm>(this.host + '/projectionFilms/' + id);
-}
+  public supprimer(id: number) {
+    return this.httpClient.delete<Projectionfilm>(this.host + '/projectionFilms/' + id);
+  }
 
-public modifier(id: number, projectionfilm: Projectionfilm) {
-return this.httpClient.put<Projectionfilm>(this.host + '/projectionFilms/' + id, projectionfilm);
-}
+  public modifier(id: number, projectionfilm: Projectionfilm) {
+    return this.httpClient.put<Projectionfilm>(this.host + '/projectionFilms/' + id, projectionfilm);
+  }
 
+  public recupererProjections(id: number): Observable<Projectionfilm> {
+    return this.httpClient.get<Projectionfilm>(this.host + '/projectionFilms/salles/' + id);
+  }
 
 }

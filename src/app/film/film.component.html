@@ -1,9 +1,9 @@
 <div class="container">
 	<div class="row">
 		<!-- Ajout d'un film -->
-		<div class="col-md-6">
+		<div class="col-md-4">
 			<div class="panel panel-primary">
-				<div class="panel-heading">
+				<div class="panel-heading" style="background-color: black">
 					<h4>Ajouter un film</h4>
 				</div>
 				<div class="panel-body">
@@ -35,14 +35,15 @@
 							<input type="date" [(ngModel)]="film.dateSortie" class="form-control">
 						</div>
 						<div>
-								<label for="select-categorie">Categorie :</label>
-						<select class="form-control" id = "select-categorie" [(ngModel)]= "film.categorie">
-							<option *ngFor="let c of categories" [ngValue] = "c">
-							  {{c.name}}
-							</option>
-						</select>
-						</div>
-						<button (click)="savefilm()" class="btn bg-primary spacer espace">
+							<label for="select-categorie">Categorie :</label>
+							<select class="form-control" id="select-categorie" [(ngModel)]="film.categorie">
+								<option *ngFor="let c of categories" [ngValue]="c">
+									{{c.name}}
+								</option>
+							</select>
+						</div><br>
+						<button (click)="savefilm()" class="btn bg-primary spacer espace"
+							style="background-color: black">
 							Ajouter
 						</button>
 					</div>
@@ -50,9 +51,9 @@
 			</div>
 		</div>
 		<!-- Liste des films -->
-		<div class="col-md-6">
-			<div class="panel panel-danger">
-				<div class="panel-heading">
+		<div class="col-md-8">
+			<div class="panel panel-primary">
+				<div class="panel-heading" style="background-color: black">
 					<h4>Liste des films</h4>
 				</div>
 				<div class="panel-body">
@@ -75,7 +76,7 @@
 								<td>{{f.duree}}</td>
 								<td>{{f.realisateur}}</td>
 								<td>{{f.photo}}</td>
-								<td>{{f.categorie.name}}</td> 
+								<td>{{f.categorie.name}}</td>
 
 								<td><button class="btn btn-success btn-sm" (click)="detail(f.idFilm)">Modifier</button>
 								</td>

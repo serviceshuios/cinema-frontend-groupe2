@@ -3,7 +3,7 @@
 		<!-- Ajout d'une ville -->
 		<div class="col-md-4">
 			<div class="panel panel-primary">
-				<div class="panel-heading">
+				<div class="panel-heading" style="background-color: black">
 					<h4>Ajouter une ville</h4>
 				</div>
 				<div class="panel-body">
@@ -26,7 +26,7 @@
 							<input [(ngModel)]="ville.longitude" class="form-control">
 						</div>
 						<br>
-						<button (click)="saveville()" class="btn bg-primary spacer espace">
+						<button (click)="saveville()" class="btn bg-primary spacer espace" style="background-color: black">
 							Ajouter
 						</button>
 					</div>
@@ -35,8 +35,8 @@
 		</div> 
 		<!-- Liste des villes -->
 		<div class="col-md-8">
-			<div class="panel panel-danger">
-				<div class="panel-heading">
+			<div class="panel panel-primary">
+				<div class="panel-heading" style="background-color: black">
 					<h4>Liste des villes</h4>
 				</div>
 				<div class="panel-body">
