@@ -5,6 +5,8 @@ import { CinemaService } from '../services/Cinema.service';
 import { Ville } from '../models/Ville.model';
 import { Salle } from '../models/salle.model';
 import { SalleService } from '../services/salle.service';
+import { Projectionfilm } from '../models/projectionfilm.model';
+import { ProjectionfilmService } from '../services/projectionfilm.service';
 
 @Component({
   selector: 'app-client',
@@ -13,6 +15,18 @@ import { SalleService } from '../services/salle.service';
 })
 export class ClientComponent implements OnInit {
 
+  test = 0;
+
+  projectionfilm: Projectionfilm = {
+
+    idProjectionFilm: 0,
+    dateProjection: null,
+    prix: 0,
+    salle: null,
+    seance: null,
+    film: null
+
+  };
   salle: Salle = {
 
     id: 0,
@@ -45,14 +59,17 @@ export class ClientComponent implements OnInit {
   }
 
   // liste des Cinemas
-  cinemas; villes;
+  cinemas; villes; salles; projections;
 
   constructor(private cinemaService: CinemaService,
               private villeService: VilleService,
-              private salleService: SalleService) { }
+              private salleService: SalleService,
+              private projectionfilmService: ProjectionfilmService) { }
 
   ngOnInit() {
     this.retrouverToutVille();
+    this.retrouverToutProjectionSalle(this.test);
+    this.retrouverToutProjection();
   }
 
   retrouverToutVille() {
@@ -70,6 +87,31 @@ export class ClientComponent implements OnInit {
       });
 
   }// end retrouverToutCinema
+
+  retrouverToutSalle(id: number) {
+    id = this.salle.cinema.id;
+    this.salleService.recupererSalles(id)
+      .subscribe(data => {
+        this.salles = data;
+      });
+    this.retrouverToutProjectionSalle(this.projectionfilm.salle.id);
+  }// end retrouverToutSalle
+
+  retrouverToutProjectionSalle(id: number) {
+    id = this.projectionfilm.salle.id;
+    this.projectionfilmService.recupererProjections(id)
+      .subscribe(data => {
+        this.salles = data;
+      });
+
+  }// end retrouverToutProjection
+
+    retrouverToutProjection() {
+    this.projectionfilmService.retrouverTout()
+      .subscribe(data => {
+        this.projections = data;
+      });
+  }
 
 
 }// end class

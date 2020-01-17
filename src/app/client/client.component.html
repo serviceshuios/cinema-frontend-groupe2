@@ -15,6 +15,7 @@
 							<td><label for="select-cinema">Cinema :</label></td>
 						</tr>
 						<tr>
+							<!--Selection de la ville-->
 							<td>
 								<select class="form-control" id="select-ville" [(ngModel)]="cinema.ville">
 									<option *ngFor="let v of villes" [ngValue]="v">
@@ -23,23 +24,71 @@
 								</select><br>
 								<button (click)="retrouverToutCinema(cinema.ville)"
 									class="btn bg-primary spacer espace">
-									Ajouter
+									Rechercher
 								</button>
 							</td>
 							<td>-</td>
 							<td>-</td>
+							<!--Selection du cinema-->
 							<td>
 								<select class="form-control" id="select-cinema" [(ngModel)]="salle.cinema">
 									<option *ngFor="let c of cinemas" [ngValue]="c">
 										{{c.name}}
 									</option>
-								</select>
-								<button class="btn bg-primary spacer espace">
-									Ajouter
+								</select><br>
+								<button (click)="retrouverToutSalle(salle.cinema.id)"
+									class="btn bg-primary spacer espace">
+									Rechercher
 								</button>
 							</td>
 						</tr>
 					</table>
+					<!--Mettre les salles-->
+					<div *ngFor="let s of salles">
+						<div class="col-md-6">
+							<div class="panel panel-danger">
+								<div class="panel-heading">
+									Salle {{s.name}}
+								</div>
+								<div class="panel-body">
+									<!-- <tr> -->
+									<!-- <td> -->
+									<div class="col-md-6">
+										<!--l'image du film-->
+										<div class="panel panel-danger">
+											<div class="panel-body">
+												image du film <br>
+												(a venir)
+											</div>
+										</div>
+									</div>
+									<!-- </td>
+										<td> -->
+									<div class="col-md-6">
+										<!--la liste des seances-->
+										<div class="panel panel-danger">
+											<div class="panel-heading">
+												Seances
+											</div>
+											<div class="panel-body">
+												liste des differentes seances <br>
+												(a venir)
+											</div>
+										</div>
+									</div>
+									<!-- </td> -->
+									<!-- </tr> -->
+									<!-- <tr> -->
+									<!--les places-->
+									<div class="col-md-12">
+										les places pour la reservation <br>
+										(a venir)
+									</div>
+									<!-- </tr> -->
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
