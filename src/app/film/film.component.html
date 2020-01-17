@@ -75,7 +75,7 @@
 								<td>{{f.dateSortie | date:"dd/MM/yyyy"}}</td>
 								<td>{{f.duree}}</td>
 								<td>{{f.realisateur}}</td>
-								<td>{{f.photo}}</td>
+								<td><img src="{{f.photo}}" width="100px" height="200px"></td>
 								<td>{{f.categorie.name}}</td>
 
 								<td><button class="btn btn-success btn-sm" (click)="detail(f.idFilm)">Modifier</button>
