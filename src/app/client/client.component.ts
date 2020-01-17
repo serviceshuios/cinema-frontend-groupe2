@@ -7,6 +7,8 @@ import { Salle } from '../models/salle.model';
 import { SalleService } from '../services/salle.service';
 import { Projectionfilm } from '../models/projectionfilm.model';
 import { ProjectionfilmService } from '../services/projectionfilm.service';
+import { Places } from '../models/places.model';
+import { PlacesService } from '../services/places.service';
 
 @Component({
   selector: 'app-client',
@@ -58,18 +60,28 @@ export class ClientComponent implements OnInit {
     ville: null
   }
 
-  // liste des Cinemas
-  cinemas; villes; salles; projections;
+  place: Places = {
+
+    idPlace: 0,
+    numero: 0,
+    latitude: 0,
+    altitude: 0,
+    longitude: 0,
+    salle: null,
+  };
+  
+
+  // liste 
+  cinemas; villes; salles; projections; places;
 
   constructor(private cinemaService: CinemaService,
-              private villeService: VilleService,
-              private salleService: SalleService,
-              private projectionfilmService: ProjectionfilmService) { }
+    private villeService: VilleService,
+    private salleService: SalleService,
+    private projectionfilmService: ProjectionfilmService,
+    private placesService: PlacesService) { }
 
   ngOnInit() {
     this.retrouverToutVille();
-    this.retrouverToutProjectionSalle(this.test);
-    this.retrouverToutProjection();
   }
 
   retrouverToutVille() {
@@ -94,24 +106,31 @@ export class ClientComponent implements OnInit {
       .subscribe(data => {
         this.salles = data;
       });
-    this.retrouverToutProjectionSalle(this.projectionfilm.salle.id);
+    // projections = this.retrouverToutProjectionSalle(id);
   }// end retrouverToutSalle
 
   retrouverToutProjectionSalle(id: number) {
-    id = this.projectionfilm.salle.id;
+    // id = this.projectionfilm.salle.id;
     this.projectionfilmService.recupererProjections(id)
       .subscribe(data => {
-        this.salles = data;
+        this.projections = data;
       });
 
   }// end retrouverToutProjection
 
-    retrouverToutProjection() {
+  retrouverToutProjection() {
     this.projectionfilmService.retrouverTout()
       .subscribe(data => {
         this.projections = data;
       });
   }
+
+  retrouverToutPlace(id: number) {
+    this.placesService.recupererPlacesDeSalle(id)
+      .subscribe(data => {
+        this.places = data;
+      })
+  }// end retrouverToutPlace
 
 
 }// end class

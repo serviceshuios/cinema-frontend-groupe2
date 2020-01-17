@@ -5,3 +5,9 @@
 div{
     text-align: center;
 }
+table {
+	align-items: center;
+	align-content: center;
+	align-self: auto;	
+	 text-align: center;
+}

@@ -15,6 +15,7 @@
 							<td><label for="select-cinema">Cinema :</label></td>
 						</tr>
 						<tr>
+							<!-- <img src="https://m.media-amazon.com/images/I/81Ta+cSf9ML._SS500_.jpg"> -->
 							<!--Selection de la ville-->
 							<td>
 								<select class="form-control" id="select-ville" [(ngModel)]="cinema.ville">
@@ -22,8 +23,8 @@
 										{{v.name}}
 									</option>
 								</select><br>
-								<button (click)="retrouverToutCinema(cinema.ville)"
-									class="btn bg-primary spacer espace" style="background-color: orangered">
+								<button (click)="retrouverToutCinema(cinema.ville)" class="btn bg-primary spacer espace"
+									style="background-color: orangered">
 									Rechercher
 								</button>
 							</td>
@@ -48,43 +49,62 @@
 						<div class="col-md-6">
 							<div class="panel panel-primary">
 								<div class="panel-heading" style="background-color: orangered">
-									Salle {{s.name}}
+									<button (click)="retrouverToutProjectionSalle(s.id)"
+										class="btn bg-primary spacer espace" style="background-color: orangered">
+										Salle {{s.name}}
+									</button>
+									<!-- Salle {{s.name}} -->
 								</div>
-								<div class="panel-body">
-									<!-- <tr> -->
-									<!-- <td> -->
-									<div class="col-md-6">
-										<!--l'image du film-->
-										<div class="panel panel-primary">
-											<div class="panel-body">
-												image du film <br>
-												(a venir)
+								<div class="panel-body" *ngFor="let p of projections">
+									<!--si projection de cette salle-->
+									<div *ngIf="s.id == p.salle.id">
+										<!-- {{p.idProjectionFilm}} -->
+										<!-- <tr> -->
+										<!-- <td> -->
+										<div class="col-md-6">
+											<!--l'image du film-->
+											<div class="panel panel-primary">
+												<div class="panel-body">
+													<img src="{{p.film.photo}}" style="height: 200px; width: 150px">
+													<!-- image du film <br>
+													(a venir) -->
+												</div>
 											</div>
 										</div>
-									</div>
-									<!-- </td>
+										<!-- </td>
 										<td> -->
-									<div class="col-md-6">
-										<!--la liste des seances-->
-										<div class="panel panel-primary">
-											<div class="panel-heading" style="background-color: orangered">
-												Seances
-											</div>
-											<div class="panel-body">
-												liste des differentes seances <br>
-												(a venir)
+										<div class="col-md-6">
+											<!--la liste des seances-->
+											<div class="panel panel-primary">
+												<div class="panel-heading" style="background-color: orangered">
+													Seances
+												</div>
+												<div class="panel-body">
+													<button (click)="retrouverToutPlace(s.id)"
+														class="btn bg-primary spacer espace"
+														style="background-color: orangered">
+														{{p.seance.heureDebut | date : 'HH:mm'}} => Prix : {{p.prix}}
+														&euro;
+													</button>
+												</div>
 											</div>
 										</div>
+										<!-- </td> -->
+										<!-- </tr> -->
+										<!-- <tr> -->
+										<!--les places-->
+										En cours de developpement ...
+										<!-- <div class="col-md-12" *ngFor="let pl of places" style="display: inline-block">
+											<div class="panel-body">
+												<button (click)="retrouverToutPlace(s.id)"
+													class="btn bg-primary spacer espace"
+													style="background-color: orangered">
+													{{pl.numero}}
+												</button>
+											</div>
+										</div> -->
+										<!-- </tr> -->
 									</div>
-									<!-- </td> -->
-									<!-- </tr> -->
-									<!-- <tr> -->
-									<!--les places-->
-									<div class="col-md-12">
-										les places pour la reservation <br>
-										(a venir)
-									</div>
-									<!-- </tr> -->
 								</div>
 							</div>
 						</div>
